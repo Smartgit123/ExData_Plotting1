@@ -7,7 +7,7 @@
 
 setwd("~/R working directory/Course Project 1")  # set working directory
 library(data.table)  #  load package
-options(datatable.by = NULL) # set by to NULL to avoid warning
+options(datatable.by = NULL) # set by to NULL to avoid warning on 2nd run
 
 # - - - - -  - - - -  Read file and prepare data   - - - - - - - - - - - - - - -
 
