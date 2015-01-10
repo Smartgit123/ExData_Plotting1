@@ -1,4 +1,5 @@
-# Date: 8 January, 2015
+# Date: 9 January, 2015
+# R version 3.1.1
 
 # Plot1.R. Creates a histogram representing a two day representation of the Global 
 # Active Power consumption.
@@ -7,7 +8,7 @@
 
 setwd("~/R working directory/Course Project 1")  # set working directory
 library(data.table)  #  load package
-options(datatable.by = NULL) # set by to NULL to avoid warning on 2nd run
+options(datatable.by = NULL) # set by to NULL to avoid warning
 
 # - - - - -  - - - -  Read file and prepare data   - - - - - - - - - - - - - - -
 
@@ -23,7 +24,7 @@ globalActivePower<-as.numeric(subSet$Global_active_power)  # create a numeric su
 
 png(filename="plot1.png",width=480,height=480,bg="transparent")  # set graphics device
 
-par(cex.axis=0.95,cex.lab=0.95)  # plot labels at 0.95 of default size
+par(cex.axis=0.952381,cex.lab=0.952381,cex.main=1.05)  # see note #4
 
 hist(globalActivePower,col="red",main="Global Active Power",
      xlab="Global Active Power (kilowatts)",breaks=12)   # plot histogram 
@@ -37,10 +38,12 @@ dev.off()  # shut the graphics device
 # Global Active Power = household global minute-averaged active power (in kilowatts)
 
 # Notes: 
-# 1. As an alternative the x axis labelling could have been generated with the datetime/
-# strptime-type ="s" method.
-# 2. Background set to transparent to match the reference plots on github.
+# 1. As an alternative the x axis labelling could have been generated with the datetime,
+# strptime method. 
+# 2. Background set to transparent to match the reference plots in "figure" folder above.
 # 3. Size of plot set to 480 x 480 pixels as outlined in course project instructions.
+# 4. Labels were reduced to 95.2381% because of the difference in size of this plot (480px) 
+# and the reference plot (504px).The labels have a fixed size regardless of the plot size. 
 
 # Completed as part of the online course in "Exploratory Data Analysis", John Hopkins
 # University.
