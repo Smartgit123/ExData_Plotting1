@@ -33,7 +33,7 @@ abbrevLabels<-weekdays(seq(start, as.Date(end+1), by=1),
 
 png( filename="plot2.png",width=480,height=480,bg="transparent")  # set graphics device
 
-par(cex.axis=0.952381,cex.lab=0.952381) # see note #4
+par(cex.axis=0.952381,cex.lab=0.952381) # # Adjust label magnification - note #4
 
 plot(glbActPower,type="l",xlab=" ",ylab="Global Active Power (kilowatts)",
       xaxt='n')  # Line plot of global active power verses time
@@ -49,11 +49,11 @@ dev.off()  # shut the graphics device
 
 # Notes: 
 # 1. As an alternative the x axis labelling could have been generated with the datetime,
-# strptime method. 
+#    strptime method.
 # 2. Background set to transparent to match the reference plots in "figure" folder above.
 # 3. Size of plot set to 480 x 480 pixels as outlined in course project instructions.
-# 4. Labels were reduced to 95.2381% because of the difference in size of this plot (480px) 
-# and the reference plot (504px).The labels have a fixed size regardless of the plot size. 
+# 4. Labels were adjusted due to the difference in size of this plot (480px) and the 
+#    reference plot (504px). [480/504=0.952381] 
 
 # Completed as part of the online course in "Exploratory Data Analysis", John Hopkins
-# University.
+# University - Coursera.

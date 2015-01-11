@@ -39,7 +39,7 @@ abbrevLabels<-weekdays(seq(start,as.Date(end+1),by=1),
 png(filename = "plot3.png",width=480,height=480,bg="transparent")
                                                        # Set graphics device
 
-par(cex.axis=0.95,cex.lab=0.95)                        # All labels to 0.95 of default
+par(cex.axis=952381,cex.lab=952381)                    # Adjust label magnification - note #4
 
 plot(subMeteringOne,type="l",xlab=" ",ylab="Energy sub metering",xaxt='n')
                                                        # Plot axes and headings
@@ -66,11 +66,11 @@ dev.off()                                              # Terminate the device dr
 
 # Notes: 
 # 1. As an alternative the x axis labelling could have been generated with the datetime,
-# strptime method.
+#    strptime method.
 # 2. Background set to transparent to match the reference plots in "figure" folder above.
 # 3. Size of plot set to 480 x 480 pixels as outlined in course project instructions.
-# 4. Labels were reduced to 95.2381% because of the difference in size of this plot (480px) 
-# and the reference plot (504px).The labels have a fixed size regardless of the plot size. 
+# 4. Labels were adjusted due to the difference in size of this plot (480px) and the 
+#    reference plot (504px). [480/504=0.952381] 
 
 # Completed as part of the online course in "Exploratory Data Analysis", John Hopkins
-# University.
+# University - Coursera.

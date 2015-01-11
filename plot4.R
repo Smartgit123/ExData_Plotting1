@@ -19,7 +19,7 @@ dat$Date <- as.Date(dat$Date,format="%d/%m/%Y")     # Change Date to date format
 start <- as.Date("1/2/2007", format="%d/%m/%Y")     # Set the start and end date
 end <- as.Date("2/2/2007", format="%d/%m/%Y")          
 
-dataSet <- dat[dat$Date %in% seq(start,             # dataSet data by dates
+dataSet <- dat[dat$Date %in% seq(start,             # SubSet data by dates
                                 end, by=1) ,]          
 dataSet <- data.frame(dataSet)                      # Change dataSet to data.frame
 
@@ -37,7 +37,7 @@ png(filename="plot4.png",width=480,height=480,bg="transparent")
                                                     # Set graphics device
 
 par(mfcol = c(2, 2))                                # Set-up plot array
-par(cex.axis=0.952381,cex.lab=0.952381)             # See note #4
+par(cex.axis=0.952381,cex.lab=0.952381)             # Adjust label magnification - note #4
 
 with(dataSet, {                                     # Use with function to plot 
 # PLOT 1                                               
@@ -79,11 +79,11 @@ dev.off()                                           # Terminate the device drive
 
 # Notes: 
 # 1. As an alternative the x axis labelling could have been generated with the datetime,
-# strptime method.
+#    strptime method.
 # 2. Background set to transparent to match the reference plots in "figure" folder above.
 # 3. Size of plot set to 480 x 480 pixels as outlined in course project instructions.
-# 4. Labels were reduced to 95.2381% because of the difference in size of this plot (480px) 
-# and the reference plot (504px).The labels have a fixed size regardless of the plot size. 
+# 4. Labels were adjusted due to the difference in size of this plot (480px) and the 
+#    reference plot (504px). [480/504=0.952381] 
 
 # Completed as part of the online course in "Exploratory Data Analysis", John Hopkins
-# University.
+# University- Coursera.
